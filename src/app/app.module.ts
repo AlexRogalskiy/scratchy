@@ -22,6 +22,7 @@ import { UserRepo } from "~/app/user/repositories/repositories/user.repository";
 import { JwtModule } from "~/app/jwt/jwt.module";
 import { HealthcheckController } from "~/app/system/controllers/healthcheck.controller";
 import { StoreModule } from "~/app/store/store.module";
+import { DynamoModule } from './dynamo/dynamo.module';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { StoreModule } from "~/app/store/store.module";
         req,
       }),
     }),
+    DynamoModule,
   ],
   controllers: [AppController, HealthcheckController],
   providers: [UserRepo],
